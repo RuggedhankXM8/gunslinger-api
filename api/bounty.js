@@ -1,0 +1,8 @@
+export default function handler(req, res) {
+  const crimes = ['horse theft', 'stagecoach robbery', 'public drunkenness', 'illegal poker games', 'cattle rustling', 'impersonating a lawman', 'moonshine smuggling', 'shooting up the saloon', 'dueling without a permit', 'tax evasion', 'train heisting', 'bank robbing', 'counterfeit gold nugget trading', 'illegal arms dealing', 'trespassing in Braithwaite Manor', 'robbery in Strawberry', 'cheating at cards in Saint Denis', 'inciting a riot in Valentine', 'looting corpses', 'taming wild horses without a license', 'punching a preacher', 'stealing funeral flowers', 'starting a tumbleweed fire', 'bitin’ the sheriff', 'outlaw karaoke', 'pantsin’ the mayor', 'loitering with malice', 'choking a chicken (literally)', 'side-eyeing the deputy', 'running from the outhouse without payin’', 'breaking a spittoon', 'bootlegging root beer', 'snoring too loud at the saloon', 'unsanctioned mustache grooming', 'spooking the town mule', 'excessive yeehawing', 'riding a goat through the courthouse', 'starting a slap fight in Blackwater', 'throwing beans at Dutch', 'mocking a Pinkerton', 'flirting with the bartender’s wife', 'stealing Micah’s hair pomade', 'selling fake tonics', "yelling 'O'Driscoll!' in a quiet church", 'prank-calling the telegraph office', 'crashing a wagon into the sheriff’s office', 'drunken fishing without a pole', 'slapping a Braithwaite pig', 'carving your name into a wanted poster', 'singing off-key at a campfire'];
+
+  const amount = Math.floor(Math.random() * 951) + 50; // $50–$1000
+  const crime = crimes[Math.floor(Math.random() * crimes.length)];
+
+  res.status(200).send(`💰 Your bounty is $${amount} for ${crime}.`);
+}
