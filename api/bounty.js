@@ -69,7 +69,17 @@ export default function handler(req, res) {
     'a solo outlaw with no allegiance',
     'a mysterious posse of raccoon hat wearers',
     'a gang that only communicates in yeehaws',
-    'the Pinkertons (double agent maybe?)'
+    'the Pinkertons (double agent maybe?)',
+    'the Whiskey Tooth Syndicate',
+    'the Dusty Biscuit Boys',
+    'the Tumbleweed Troublemakers',
+    'the Mud Creek Moustache Club',
+    'the Spittoon Slammers',
+    'the Lasso Lassies',
+    'the Church Boots Cartel',
+    'the Moonshine Philharmonic',
+    'the Mustache Twisters of Tumbleton',
+    'the Lawnmower Bandits'
   ];
 
   const amount = Math.floor(Math.random() * 951) + 50; // $50–$1000
