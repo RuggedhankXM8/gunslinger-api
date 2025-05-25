@@ -77,6 +77,7 @@ export default function handler(req, res) {
     ? names[names.length - 1]
     : names[Math.floor(Math.random() * (names.length - 1))];
 
-  const message = `@$(user), you shall now be known as... ${name}`;
+  const user = req.query.user || "Stranger";
+  const message = `@${user}, you shall now be known as... ${name}`;
   res.status(200).send(message);
 }
