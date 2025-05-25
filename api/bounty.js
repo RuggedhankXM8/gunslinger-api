@@ -60,26 +60,26 @@ export default function handler(req, res) {
   ];
 
   const gangs = [
-    'the Van der Linde gang',
-    'the O’Driscolls',
-    'the Lemoyne Raiders',
-    'the Skinner Brothers',
-    'the Del Lobos',
-    'the Murfree Brood',
-    'a solo outlaw with no allegiance',
-    'a mysterious posse of raccoon hat wearers',
-    'a gang that only communicates in yeehaws',
-    'the Pinkertons (double agent maybe?)',
-    'the Whiskey Tooth Syndicate',
-    'the Dusty Biscuit Boys',
-    'the Tumbleweed Troublemakers',
-    'the Mud Creek Moustache Club',
-    'the Spittoon Slammers',
-    'the Lasso Lassies',
-    'the Church Boots Cartel',
-    'the Moonshine Philharmonic',
-    'the Mustache Twisters of Tumbleton',
-    'the Lawnmower Bandits'
+    'the Hole in the Hat Gang',
+    'the Dry Gulch Guzzlers',
+    'the High Noon Nappers',
+    'the Deadeye Dandies',
+    'the Boot Scoot Bandits',
+    'the Rattlesnake Rascals',
+    'the Dynamite Denture Crew',
+    'the Whiskey Creek Weirdos',
+    'the Chili-Stained Cowboys',
+    'the Six-Shooter Sock Puppets',
+    'the Buzzard’s Breakfast Club',
+    'the Unshaven & Unforgiven',
+    'the Yellin’ Yodelers',
+    'the No-Horse Posse',
+    'the Bronco Breakin’ Bakers',
+    'the Last Beans on Earth',
+    'the Pecos Pickle Patrol',
+    'the Saddlebag Symphony',
+    'the Cold Coffee Cartel',
+    'the Salty Spitoon Regulators'
   ];
 
   const amount = Math.floor(Math.random() * 951) + 50; // $50–$1000
