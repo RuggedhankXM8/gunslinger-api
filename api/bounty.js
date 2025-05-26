@@ -3,6 +3,58 @@ export default function handler(req, res) {
   const user = query.user || 'Stranger';
 
   const crimes = [
+    // Fart Crimes
+    'fartin’ so loud it spooked the horses',
+    'blamin’ a fart on the deputy',
+    'crop dustin’ the entire saloon',
+    'rippin’ one mid-duel and throwin’ off the aim',
+    'fartin’ during the mayor’s wedding',
+    'launchin’ a fart and callin’ it “warning fire”',
+    'gassin’ up the jail cell with no remorse',
+    'fartin’ in Dutch’s tent and runnin’',
+    'fartin’ on a sacred blanket',
+    'causin’ a stampede with a bean-fueled blast',
+    'fartin’ next to the preacher and blamin’ God',
+    'accidentally ignitin’ a fart near dynamite',
+    'leavin’ a silent one in the general store',
+    'sittin’ in the saloon and rippin’ like a thunderclap',
+    'fartin’ into a bounty poster tube',
+
+    // Burp Crimes
+    'burpin’ the national anthem at the town hall',
+    'causin’ a bar brawl with a chili-powered belch',
+    'burpin’ at Sadie (she did not laugh)',
+    'belchin’ into the mayor’s ear trumpet',
+    'turnin’ a train robbery into a burpin’ contest',
+    'burpin’ so loud the sheriff drew his gun',
+    'burpin’ the word “O’Driscoll” by accident',
+    'offendin’ the reverend with a stew burp',
+    'burpin’ up a whole sausage on the poker table',
+    'belchin’ into a harmonica for flair',
+    'burpin’ in rhythm during the church hymn',
+    'leadin’ the town parade with a series of burps',
+    'burpin’ through an entire confession',
+    'accidentally burpin’ in Micah’s stew',
+    'scarin’ horses with thunder burps',
+
+    // Overeating Crimes
+    'eatin’ all the gang’s beans and denyin’ it',
+    'snackin’ during a stagecoach heist',
+    'stealin’ six pies from the preacher’s window',
+    'passin’ out in a stew pot mid-robbery',
+    'sneakin’ bites off the mayor’s dinner plate',
+    'eatin’ an entire crate of biscuits before noon',
+    'bein’ caught lickin’ the stew pot clean',
+    'stealin’ candy from the general store and cryin’',
+    'chokin’ on cornbread durin’ a standoff',
+    'eatin’ evidence at a crime scene (was pie)',
+    'hidin’ pickled eggs in your boot “for later”',
+    'goin’ back for fourths at the church picnic',
+    'holdin’ up a wagon for its lunch basket',
+    'bein’ too full to flee the scene',
+    'tradin’ dynamite for chili',
+
+    // Original Crimes
     'moonshinin’ with a raccoon sidekick',
     'ridin’ a donkey through a funeral',
     'stealin’ beans one can at a time',
