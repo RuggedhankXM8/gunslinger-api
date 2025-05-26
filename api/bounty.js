@@ -19,6 +19,23 @@ export default function handler(req, res) {
     'leavin’ a silent one in the general store',
     'sittin’ in the saloon and rippin’ like a thunderclap',
     'fartin’ into a bounty poster tube',
+    
+    // Bad Singing Crimes
+    'singin’ off-key at the gallows',
+    'startin’ a bar fight with a yodel solo',
+    'serenadin’ Micah without consent',
+    'yodelin’ during a bank robbery',
+    'tryin’ to sing Sadie to sleep (bad idea)',
+    'singin’ love songs to a wanted poster',
+    'breakin’ windows with your high notes',
+    'performin’ “Rawhide” with a kazoo backup',
+    'yowlin’ like a coyote in church',
+    'leadin’ a saloon singalong no one asked for',
+    'usin’ the sheriff’s megaphone for karaoke',
+    'singin’ to your stew like it was a date',
+    'doin’ a one-man opera in the bathhouse',
+    'turnin’ the town square into a hootin’ concert',
+    'writin’ outlaw ballads about yourself (bad ones)',
 
     // Burp Crimes
     'burpin’ the national anthem at the town hall',
