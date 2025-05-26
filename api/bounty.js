@@ -1,4 +1,7 @@
 export default function handler(req, res) {
+  const { query } = req;
+  const user = query.user || 'Stranger';
+
   const crimes = [
     'moonshinin’ with a raccoon sidekick',
     'ridin’ a donkey through a funeral',
@@ -82,11 +85,13 @@ export default function handler(req, res) {
     'the Salty Spitoon Regulators'
   ];
 
-  const amount = Math.floor(Math.random() * 951) + 50; // $50–$1000
+  const amount = Math.floor(Math.random() * 951) + 50;
   const crime = crimes[Math.floor(Math.random() * crimes.length)];
   const town = towns[Math.floor(Math.random() * towns.length)];
   const gang = gangs[Math.floor(Math.random() * gangs.length)];
   const stars = '⭐'.repeat(Math.floor(Math.random() * 5) + 1);
 
-  res.status(200).send(`💰 Your bounty is $${amount} for ${crime} in ${town}, affiliated with ${gang}.\n🔥 Wanted Level: ${stars}`);
+  const message = `${user} has a $${amount} bounty for ${crime} in ${town}. Gang: ${gang}. ${stars}`;
+
+  res.status(200).send(message);
 }
