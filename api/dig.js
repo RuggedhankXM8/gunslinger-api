@@ -2,6 +2,14 @@ export default function handler(req, res) {
   const { query } = req;
   const user = query.user || 'Stranger';
 
+  const ultraRareItems = [
+    'a pristine emerald brooch',
+    'a flawless diamond ring',
+    'a gold bar (seriously)',
+    'a rare coin from 1792',
+    'a pocket watch engraved by J. Marston'
+  ];
+
   const valuableItems = [
     'a gold tooth',
     'a silver locket',
@@ -28,34 +36,6 @@ export default function handler(req, res) {
     'a miniature portrait in a locket',
     'a gold-plated toothpick',
     'a fine silk glove (intact)'
-  ];
-
-  const quirkyItems = [
-    'a child’s drawing under a loose stone',
-    'a bottle of perfume with the cork still in',
-    'a sheriff’s button stuck in a root',
-    'a photo of someone who looks like you',
-    'a lock of hair tied with red thread',
-    'a note that just says “Sorry.”',
-    'a marble carved like a skull (tiny, not scary)',
-    'a church bulletin from 1879',
-    'a matchbook with “Not yet” scribbled on it',
-    'a wooden coin',
-    'a domino with a bite mark',
-    'a hat with bullet holes and no owner',
-    'a spoon bent into a heart',
-    'a tooth wrapped in cloth',
-    'a tiny boot (child’s size)',
-    'a hairpin made of copper',
-    'a corked bottle of creek water',
-    'a letter addressed to “Mama”',
-    'a poem carved into a piece of bark',
-    'a piece of mirror wrapped in flannel',
-    'a key with no matching lock',
-    'a feather tied to a nail',
-    'a burnt playing card',
-    'a handkerchief with lipstick on it',
-    'a button stitched into a pinecone'
   ];
 
   const junkItems = [
@@ -86,8 +66,6 @@ export default function handler(req, res) {
     'a flattened tin whistle'
   ];
 
-  const allItems = [...valuableItems, ...quirkyItems, ...junkItems];
-
   const places = [
     'behind the church',
     'under an old tree',
@@ -99,9 +77,22 @@ export default function handler(req, res) {
     'next to a rusted shovel'
   ];
 
-  const item = allItems[Math.floor(Math.random() * allItems.length)];
-  const place = places[Math.floor(Math.random() * places.length)];
+  const roll = Math.random();
+  let item, tag;
 
-  const message = `${user} dug up ${item} ${place}.`;
+  if (roll < 0.05) {
+    item = ultraRareItems[Math.floor(Math.random() * ultraRareItems.length)];
+    tag = '🌟 ultra rare';
+  } else if (roll < 0.45) {
+    item = valuableItems[Math.floor(Math.random() * valuableItems.length)];
+    tag = '💰 valuable';
+  } else {
+    item = junkItems[Math.floor(Math.random() * junkItems.length)];
+    tag = '🪙 worthless';
+  }
+
+  const place = places[Math.floor(Math.random() * places.length)];
+  const message = `*${user} dug ${place} and found ${item} (${tag}).*`;
+
   res.status(200).send(message);
 }
