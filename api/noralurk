@@ -1,0 +1,74 @@
+export default function handler(req, res) {
+  const user = req.query.user || "A Player";
+
+  const messages = [
+    // ───── HALO INFINITE ─────
+    "is dropping into Zeta Halo… quietly.",
+    "has activated stealth like a Spartan on patrol.",
+    "is riding a Warthog around the ring, unseen.",
+    "has gone MIA like a Banished patrol.",
+    "is cloaked and scanning from a Ghost.",
+    "is hiding behind a Scorpion tank, silently.",
+    "has joined the fight but remains camouflaged.",
+    "is lurking in the Forerunner ruins, watching the stars.",
+    "is charging a Gravity Hammer in the shadows.",
+    "is plotting in the control room like Atriox himself.",
+    "is circling the ring in a Banshee, engine off.",
+    "is calibrating their Mjolnir armor quietly.",
+    "is crouched with a BR75, eyes on chat.",
+    "is waiting for the Overshield spawn… patiently.",
+    "is cloaked like a Phantom above Zeta Halo.",
+    "has gone dark on comms — mission ongoing.",
+    "is lurking near the Weapon’s uplink terminal.",
+    "is sneaking through a Forerunner vault unseen.",
+    "is standing guard in silence at the Tower.",
+    "is hiding in the mist near Banished territory.",
+
+    // ───── FORTNITE ─────
+    "is hiding in a bush somewhere on the Island.",
+    "is building a 5-star hotel just to hide from chat.",
+    "is crouched behind a wall, waiting for circle 2.",
+    "is reboot-card camping for their squad.",
+    "is gliding in from the Battle Bus — quiet landing.",
+    "is lurking like a sneaky Peely with a mythic.",
+    "is watching chat through a scoped DMR.",
+    "has gone full stealth in a cardboard box.",
+    "is harvesting mats in silence.",
+    "is chilling in the storm pretending it’s strategy.",
+    "is emoting behind cover, unseen.",
+    "is stacking shield potions in the shadows.",
+    "is crouched in Tilted Towers’ ruins, listening.",
+    "has gone undercover using the Cloak Gauntlet.",
+    "is silently rotating with a Shockwave Grenade.",
+    "is waiting in a rift, watching from above.",
+    "is driving a Whiplash off-radar.",
+    "is fishing at Loot Lake while lurking.",
+    "is looting quietly in Mega City.",
+    "is camping at the reboot van — you didn’t see that.",
+
+    // ───── CALL OF DUTY : BLACK OPS 6 ─────
+    "is lurking like a covert operative behind enemy lines.",
+    "has gone dark under the CIA radar.",
+    "is crouched in the shadows with a suppressed SMG.",
+    "is holding position near the extraction zone.",
+    "is scanning UAV signals silently.",
+    "is hiding behind cover with Dead Silence active.",
+    "has gone radio silent — mission classified.",
+    "is moving with the squad but staying off comms.",
+    "is lurking in Nuketown’s back alley.",
+    "is reloading quietly and checking corners.",
+    "is camping the objective, unseen.",
+    "is hiding in the smoke after a flashbang.",
+    "is ghosting chat like a pro operator.",
+    "is laying low after a bad killstreak.",
+    "is watching the radar — no contacts yet.",
+    "is re-arming a care package silently.",
+    "is crouched near the B-site — no movement.",
+    "is lurking in the shadows with a heartbeat sensor.",
+    "is cleaning their weapon — ready for the next round.",
+    "is silently exfil-ready but still watching chat."
+  ];
+
+  const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+  res.status(200).json({ message: `${user} ${randomMessage}` });
+}
