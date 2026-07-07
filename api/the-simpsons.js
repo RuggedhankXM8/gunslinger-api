@@ -6,7 +6,7 @@ export default function handler(req, res) {
     "Ay caramba! — Bart",
     "Don't have a cow, man! — Bart",
     "Mmm... donuts. — Homer",
-    "Hi, I'm Troy McClure. You may remember me from such self-help videos as... — Troy McClure",
+    "Hi, I'm Troy McClure. You may remember me from such self-help videos as... — Troy McClue",
     "Excellent. — Mr. Burns",
     "Hi, Everybody! — Dr. Nick",
     "Hi, Dr. Nick! — Crowd",
