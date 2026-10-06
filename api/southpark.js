@@ -1,4 +1,65 @@
 export default function handler(req, res) {
+  // Always set plain text header so Nightbot displays clean text
+  res.setHeader('Content-Type', 'text/plain');
+
+  // Extract parameters from query
+  const { cmd, touser, user } = req.query;
+  const targetUser = touser || user || 'Someone';
+
+  // Determine requested command (defaults to 'southpark' if no ?cmd= parameter is passed)
+  const command = (cmd || 'southpark').toLowerCase();
+
+  switch (command) {
+    case 'gooner':
+      return handleGooner(targetUser, res);
+
+    case 'southpark':
+    case 'quote':
+      return handleSouthPark(res);
+
+    default:
+      return res.status(400).send('Invalid command specified.');
+  }
+}
+
+// -------------------------------------------------------------
+// Command 1: DBZ Ki / Gooner Command
+// -------------------------------------------------------------
+function handleGooner(targetUser, res) {
+  const roster = [
+    { name: 'Yajirobe', weight: 20, minKi: 0, maxKi: 30 },
+    { name: 'Yamcha', weight: 20, minKi: 31, maxKi: 45 },
+    { name: 'Krillin', weight: 15, minKi: 46, maxKi: 60 },
+    { name: 'Tien', weight: 15, minKi: 61, maxKi: 70 },
+    { name: 'Piccolo', weight: 10, minKi: 71, maxKi: 80 },
+    { name: 'Vegeta', weight: 8, minKi: 81, maxKi: 88 },
+    { name: 'Super Saiyan', weight: 7, minKi: 89, maxKi: 94 },
+    { name: 'Super Saiyan Blue', weight: 4, minKi: 95, maxKi: 98 },
+    { name: 'Ultra Instinct', weight: 1, minKi: 99, maxKi: 100 }
+  ];
+
+  const totalWeight = roster.reduce((sum, char) => sum + char.weight, 0);
+  let randomWeight = Math.random() * totalWeight;
+  let selected = roster[0];
+
+  for (const char of roster) {
+    if (randomWeight < char.weight) {
+      selected = char;
+      break;
+    }
+    randomWeight -= char.weight;
+  }
+
+  const ki = Math.floor(Math.random() * (selected.maxKi - selected.minKi + 1)) + selected.minKi;
+  const over9000 = ki >= 90 ? ' OVER 9000!' : '';
+
+  return res.status(200).send(`${targetUser} is a ${selected.name} Gooner ${ki}% Ki${over9000}`);
+}
+
+// -------------------------------------------------------------
+// Command 2: Your Existing South Park Quotes
+// -------------------------------------------------------------
+function handleSouthPark(res) {
   const lines = [
     "Screw you guys, I'm going home. — Cartman",
     "I'm not fat, I'm big-boned! — Cartman",
@@ -70,5 +131,5 @@ export default function handler(req, res) {
   ];
 
   const random = lines[Math.floor(Math.random() * lines.length)];
-  res.status(200).send(random);
+  return res.status(200).send(random);
 }
